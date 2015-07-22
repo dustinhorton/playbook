@@ -1,0 +1,15 @@
+{
+  "name": "playbook",
+  "version": "0.0.1",
+  "description": "CSS strategy",
+  "author": "Dustin Horton <d@dustinhorton.com> (http://dustinhorton.com)",
+  "main" : "css/playbool.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustinhorton/playbook.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/dustinhorton/playbook/issues",
+    "email": "d@dustinhorton.com"
+  }
+}
