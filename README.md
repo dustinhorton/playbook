@@ -2,7 +2,7 @@
 
 CSS strategy
 
-# Usage
+## Usage
 
 Download or install
 
