@@ -4,7 +4,7 @@ CSS strategy
 
 ## Usage
 
-Install or download
+Install or download:
 
 <!--
 ```console
