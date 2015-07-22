@@ -1,0 +1,156 @@
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+
+//  ----------------------------------------------------------------------
+//  BLOCK
+//  ----------------------------------------------------------------------
+
+html {
+  text-size-adjust: 100%;  // ios, mobile webkit & winmo
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+article,
+aside,
+details,  // ff & ie 10 & 11
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,  // ie 11
+menu,
+nav,
+section,
+summary {  // ff & ie 10 & 11
+  display: block;  // ie 8 & 9
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;  // ie 8 & 9
+  vertical-align: baseline;  // chrome, ff & opera
+}
+
+h1 {
+  font-size: 100%;  // chrome, safari & ff
+}
+
+hr {
+  height: 1px;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;  // ios
+}
+
+template {
+  display: none; // safari, ie 8-11
+}
+
+
+//  ----------------------------------------------------------------------
+//  FORM
+//  ----------------------------------------------------------------------
+
+input,
+textarea,
+select {
+  appearance: none;
+  border-radius: 0;
+}
+
+button {
+  overflow: visible;  // ie 8-11
+  text-transform: none;  // ff, opera, ie 8-11
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+input {
+  line-height: normal;  // ff
+
+  &[type="number"] {
+    &::-webkit- {
+      &inner-spin-button,
+      &outer-spin-button {
+        height: auto;  // chrome
+      }
+    }
+  }
+}
+
+textarea {
+  overflow: auto;  // ie 8-11
+}
+
+select {
+  text-transform: none;  // ff
+}
+
+
+//  ----------------------------------------------------------------------
+//  INLINE
+//  ----------------------------------------------------------------------
+
+b,
+strong {
+  font-weight: bold;  // chrome, safari & ff
+}
+
+a {
+  background: none;  // ie 10
+}
+
+abbr {
+  speak: spell-out;
+}
+
+img {
+  border: 0;  // ie 8-10
+}
+
+small {
+  font-size: 100%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+svg:not(:root) {
+  overflow: hidden;  // ie 9-11
+}
+
+
+//  ----------------------------------------------------------------------
+//  ATTRIBUTE
+//  ----------------------------------------------------------------------
+
+[hidden] {
+  display: none;  // ie 8-10
+}

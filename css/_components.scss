@@ -1,0 +1,63 @@
+.btn---full {
+  @include btn-full;
+}
+
+
+.container {
+  margin: auto;
+  padding: 0 $container-gutter;
+}
+
+
+.embed {
+  width: 100%;
+  height: 0;
+  padding: 0 0 aspect-ratio(1080, 720);
+  position: relative;
+}
+
+.embed--src {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.form-single {
+  width: 100%;
+  display: table;
+}
+
+.form-single--input {
+  width: 100%;
+  display: table-cell;
+}
+
+.form-single--action {
+  width: 1%;
+  display: table-cell;
+  padding: 0 0 0 $form-single-gutter;
+}
+
+.form-single--action--btn {
+  white-space: nowrap;
+}
+
+
+.img---full {
+  @include img-full;
+}
+
+
+.list---alpha    { @include list-alpha; }
+.list---bulleted { @include list-bulleted; }
+.list---numbered { @include list-numbered; }
+
+.list---blocks {
+  > li,
+  > dd {
+    margin-bottom: $block-margin;
+  }
+}

@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+//  ----------------------------------------------------------------------
+//  BLOCK
+//  ----------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+blockquote,
+q {
+  quotes: none;
+
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+pre,
+code {
+  font-family: monospace, monospace;
+}
+
+hr {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: normal;
+  text-align: left;
+}
+
+
+//  ----------------------------------------------------------------------
+//  FORM
+//  ----------------------------------------------------------------------
+
+button,
+input,
+textarea
+select,
+optgroup {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+fieldset,
+legend {
+  border: 0;
+}
+
+optgroup {
+  font-weight: bold;  // override previous reset
+}
+
+
+//  ----------------------------------------------------------------------
+//  INLINE
+//  ----------------------------------------------------------------------
+
+address,
+cite {
+  font-style: normal;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+}

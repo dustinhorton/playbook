@@ -1,0 +1,148 @@
+*:last-child {
+  margin-bottom: 0;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: $fonts;
+}
+
+body,
+button,
+select {
+  line-height: 1;
+}
+
+
+//  ----------------------------------------------------------------------
+//  BLOCK
+//  ----------------------------------------------------------------------
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  color: $color;
+
+  .lt-ie9 & {
+    width: $full;
+    margin: auto;
+  }
+}
+
+p,
+blockquote {
+  line-height: $line-height;
+}
+
+p {
+  margin: 0 0 $block-margin;
+}
+
+table {
+  width: 100%;
+}
+
+
+//  ----------------------------------------------------------------------
+//  FORM
+//  ----------------------------------------------------------------------
+
+button,
+input,
+textarea,
+select {
+  vertical-align: middle;
+}
+
+button,
+label[for],
+input[type="checkbox"],
+input[type="radio"],
+select {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+}
+
+input,
+textarea {
+  line-height: normal;  // override reset
+
+  &::placeholder {
+    color: $placeholder;
+    text-overflow: ellipsis !important;
+  }
+}
+
+input {
+  &[type="checkbox"],
+  &[type="radio"] {
+    width: auto;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+select {
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+
+//  ----------------------------------------------------------------------
+//  INLINE
+//  ----------------------------------------------------------------------
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  STATES
+//  ----------------------------------------------------------------------
+
+.active {
+  cursor: default;
+}
+
+.disabled,
+[disabled] {
+  &,
+  * {
+    cursor: default !important;
+    pointer-events: none;
+  }
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  AT-RULES
+//  ----------------------------------------------------------------------
+
+@viewport {
+  width: device-width;
+  user-zoom: fixed;
+  zoom: 1.0;
+}

@@ -1,0 +1,11 @@
+@if length($webfonts) > 0 {
+  @each $font in $webfonts {
+    @font-face {
+      font-family: $font;
+      font-weight: normal;
+      src: font-url('#{$font}.eot?') format('embedded-opentype'),
+           font-url('#{$font}.woff') format('woff'),
+           font-url('#{$font}.ttf')  format('truetype');
+    }
+  }
+}

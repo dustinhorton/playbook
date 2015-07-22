@@ -1,0 +1,123 @@
+//  ----------------------------------------------------------------------
+//  PATHS
+//  ----------------------------------------------------------------------
+
+$img-path:  '/img/'  !default;
+$font-path: '/font/' !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  SCAFFOLDING
+//  ----------------------------------------------------------------------
+
+$content: 1024px !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  GRID
+//  ----------------------------------------------------------------------
+
+$cols:      3     !default;
+$cols-solo: $cols !default;
+$cols-copy: $cols !default;
+
+
+//  SPACING
+$gutter:   20px !default;
+$gutter-y: 50px !default;
+
+$block-margin: 20px !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  TYPOGRAPHY
+//  ----------------------------------------------------------------------
+
+$webfonts: () !default;
+
+$color: #000 !default;
+
+$fonts:     helvetica neue, helvetica, arial, sans-serif !default;
+$font-icon: '' !default;
+
+$font-size: 16px !default;
+
+$line-height: 1.35 !default;
+
+
+$h-font-weight: normal !default;
+
+$placeholder: rgba($color, 0.75) !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  ANIMATION
+//  ----------------------------------------------------------------------
+
+$duration: 150ms !default;
+
+$ease: ease-in-out !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  COMPONENTS
+//  ----------------------------------------------------------------------
+
+$btn-align: left !default;
+
+$container-gutter: $gutter !default;
+
+$form-single-gutter: $gutter / 2 !default;
+
+$list-p: 1.35em !default;
+
+$modal-s: 10px !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  BREAKPOINTS
+//  ----------------------------------------------------------------------
+
+$full:       $content + $container-gutter * 2 !default;
+$gt-full:    $full + 1 !default;
+$lt-full:    $full - 1 !default;
+$desktop:    980px !default;
+$tablet:     768px !default;
+$mobile:     568px !default;
+$mobile-med: 480px !default;
+$mobile-sm:  320px !default;
+
+$bps:
+  full       $full,
+  lt-full    $lt-full,
+  desktop    $desktop,
+  tablet     $tablet,
+  mobile     $mobile,
+  mobile-med $mobile-med,
+  mobile-sm  $mobile-sm
+  !default;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  LISTS
+//  ----------------------------------------------------------------------
+
+$socials:
+  fb        $fb,
+  twitter   $twitter,
+  pinterest $pinterest
+  !default;

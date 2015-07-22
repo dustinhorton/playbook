@@ -1,0 +1,336 @@
+@mixin prefix($prop, $val, $prefixes: $prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$prop}: $val;
+  }
+  #{$prop}: $val;
+}
+
+@mixin bg-gradient($start, $end, $orientation: vertical) {
+  $orientation: if($orientation == vertical, to bottom, to right);
+  $filter-orientation: if($orientation == vertical, 0, 1);
+  background: mix($start, $end);
+  background: linear-gradient($orientation, $start, $end);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$filter-orientation}, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($end)}');
+}
+
+@mixin bg-svg($img, $w, $h) {
+  background: img-url($img + '.svg');
+  background-size: $w $h;
+
+  .no-svg & {
+    background-image: img-url($img + '.png');
+  }
+}
+
+@mixin border-image($img, $border-w-x, $border-w-y: $border-w-x, $border-color: #000) {
+  border-image: img-url($img) strip-unit($border-w-x) strip-unit($border-w-y) repeat;
+
+  .no-borderimage & {
+    border: 1px $border-color solid;
+  }
+}
+
+@mixin border-radius($side, $radius: $radius) {
+  @if $side == top or $side == bottom {
+    border-#{$side}-right-radius: $radius;
+    border-#{$side}-left-radius: $radius;
+  }
+  @else if $side == right or $side == left {
+    border-top-#{$side}-radius: $radius;
+    border-bottom-#{$side}-radius: $radius;
+  }
+}
+
+@mixin center($axis: both) {
+  @if $axis == x {
+    @include center-x;
+  }
+  @elseif $axis == y {
+    @include center-y;
+  }
+  @else {
+    @include center-x;
+    @include center-y;
+  }
+}
+
+@mixin cf {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin circle($size) {
+  @include size($size);
+  border-radius: 50%;
+}
+
+@mixin hidden {
+  width: 1px !important;
+  height: 1px !important;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+@mixin pointer-base($size: $pointer-size) {
+  &:after {
+    content: '';
+    border: $size transparent solid;
+    position: absolute;
+  }
+}
+
+@mixin pointer-position($side: 'y', $size: $pointer-size) {
+  @if $side == y {
+    margin: 0 0 0 (-$size);
+    left: 50%;
+  }
+  @else if $side == x {
+    margin: -$size 0 0 0;
+    top: 50%;
+  }
+}
+
+@mixin pointer($side: top, $size: 10px, $color: transparent, $alignment: center, $offset: $size * 1.5) {
+  position: relative;
+
+  &:after {
+    content: '';
+    border: $size transparent solid;
+    position: absolute;
+
+    @if $side == top or $side == bottom {
+      @include pointer-position(y, $size);
+
+      @if $alignment == left {
+        margin-left: 0;
+        left: $offset
+      }
+      @else if $alignment == right {
+        margin-left: 0;
+        right: $offset;
+        left: auto;
+      }
+    }
+    @else if $side == right or $side == left {
+      @include pointer-position(x, $size);
+
+      @if $alignment == top {
+        margin-top: 0;
+        top: $offset
+      }
+      @else if $alignment == bottom {
+        margin-top: 0;
+        top: auto;
+        bottom: $offset;
+      }
+    }
+
+    @if $side == top {
+      border-bottom-color: $color;
+      bottom: 100%;
+    }
+    @else if $side == right {
+      border-left-color: $color;
+      left: 100%;
+    }
+    @else if $side == bottom {
+      border-top-color: $color;
+      top: 100%;
+    }
+    @else if $side == left {
+      border-right-color: $color;
+      right: 100%;
+    }
+  }
+}
+
+@mixin scroll {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin transition($args...) {
+  transition: $duration $ease;
+  transition-property: $args;
+}
+
+
+
+//  ----------------------------------------------------------------------
+//  TYPOGRAPHY
+//  ----------------------------------------------------------------------
+
+@if $font-icon != '' {
+  @mixin font-icon {
+    font-family: $font-icon;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+@mixin letter-spacing($num) {
+  letter-spacing: letter-spacing($num);
+}
+
+@mixin line-height($px) {
+  line-height: line-height($px);
+}
+
+@mixin text-break {
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+@mixin text-truncate {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 150%;
+  white-space: nowrap;
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  RESETS
+//  ----------------------------------------------------------------------
+
+@mixin reset {
+  width: auto;
+  background: none;
+  border: 0;
+  float: none;
+  margin: 0;
+  padding: 0;
+  position: static;
+  @include reset-type;
+}
+
+@mixin reset-margins {
+  &:first-child { margin-top:    0; }
+  &:last-child  { margin-bottom: 0; }
+}
+
+@mixin reset-type {
+  color: $color;
+  font-family: $fonts;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-transform: none;
+}
+
+@mixin reset-type-heading {
+  @include reset-type;
+  font-weight: $h-font-weight;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  COMPONENTS
+//  ----------------------------------------------------------------------
+
+@mixin btn-full {
+  width: 100%;
+  display: block;
+  text-align: $btn-align;
+}
+
+@mixin img-full {
+  width: 100%;
+  max-width: none;
+}
+
+@mixin list-alpha {
+  list-style: lower-alpha;
+  padding-left: $list-p;
+}
+
+@mixin list-bulleted {
+  list-style: disc;
+  padding-left: $list-p;
+}
+
+@mixin list-numbered {
+  list-style: decimal;
+  padding-left: $list-p;
+}
+
+@mixin modal-w($w) {
+  width: $w;
+  margin: 0 0 0 (-$w / 2);
+
+  @media (max-width: $w + ($modal-s * 2)) {
+    width: auto;
+    margin: 0;
+    top: $modal-s;
+    right: $modal-s;
+    left: $modal-s;
+  }
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  MEDIA QUERIES & BROWSER TARGETING
+//  ----------------------------------------------------------------------
+
+@mixin mq-class($bp, $class) {
+  @media (max-width: $bp) {
+    @content;
+  }
+
+  .#{$class} & {
+    @content;
+  }
+}
+
+@mixin vendor($vendor) {
+  @if $vendor == webkit {
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      @content;
+    }
+  }
+  @else if $vendor == ff {
+    @-moz-document url-prefix() {
+      @content;
+    }
+  }
+}

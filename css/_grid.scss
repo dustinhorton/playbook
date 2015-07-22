@@ -1,0 +1,194 @@
+//  ----------------------------------------------------------------------
+//  COLUMNS
+//  ----------------------------------------------------------------------
+
+@mixin cols($gutter: $gutter) {
+  $margin: -$gutter / 2;
+  margin-right: $margin;
+  margin-left:  $margin;
+}
+
+@mixin col($gutter: $grid-gutter) {
+  padding: 0 ($gutter / 2);
+}
+
+@mixin generate-cols($gutter: $gutter) {
+  @include cols($gutter);
+
+  > [class*="col---"] {
+    @include col($gutter);
+  }
+}
+
+@mixin generate-all-cols($cols, $bp) {
+  @for $i from 1 through $cols {
+    @if $i == 1 and $bp == full {
+      .col---#{$i} {
+        width: 100%;
+      }
+    }
+    @else {
+      @if $i == 2 and $bp != full {
+        .col---#{$bp}-1 {
+          width: 100%;
+        }
+      }
+
+      @for $x from 1 through $i {
+        @if $x != $i {
+          @if $bp == full {
+            .col---#{$x}-#{$i} {
+              width: percentage($x, $i);
+            }
+          }
+          @else {
+            .col---#{$bp}-#{$x}-#{$i} {
+              width: percentage($x, $i);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin reset-cols {
+  margin-right: 0;
+  margin-left: 0;
+
+  > [class*="col---"] {
+    width: auto;
+    float: none;
+    padding: 0;
+  }
+}
+
+
+.cols {
+  @include cf;
+  @include cols($gutter);
+
+  > [class*="col---"] {
+    @include col($gutter);
+    min-height: 1px;
+    float: left;
+  }
+}
+
+.cols---rev > [class*="col---"] {
+  float: right;
+}
+
+@each $name, $var in $bps {
+  @if $name == full {
+    @include generate-all-cols($cols, $name);
+  }
+  @else {
+    @media (max-width: $var) {
+      @include generate-all-cols($cols, $name);
+
+      .cols-reset---#{$name} {
+        @include reset-cols;
+      }
+    }
+  }
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  COLUMN - SOLO
+//  ----------------------------------------------------------------------
+
+@mixin generate-cols-solo($cols: $cols-solo) {
+  @for $i from 1 through $cols {
+    @for $x from 1 through $i {
+      @if $i != 1 and $x != $i {
+        .col---#{$x}-#{$i}.col---solo {
+          max-width: $full / $i * $x;
+        }
+      }
+    }
+  }
+}
+
+
+.col---solo {
+  width: auto;
+}
+
+@include generate-cols-solo;
+
+
+
+
+//  ----------------------------------------------------------------------
+//  COPY COLUMNS
+//  ----------------------------------------------------------------------
+
+@mixin cols-copy($cols, $gutter: $gutter) {
+  column-count: $cols;
+  column-gap: $gutter;
+}
+
+@mixin generate-cols-copy($cols, $bp) {
+  @for $i from 1 through $cols {
+    @if $bp == full {
+      .cols---#{$i} {
+        @include cols-copy($i);
+      }
+    }
+    @else {
+      .cols---#{$bp}-#{$i} {
+        column-count: $i;
+      }
+    }
+  }
+}
+
+@each $name, $var in $bps {
+  @if $name == full {
+    @include generate-cols-copy($cols-copy, $name);
+  }
+  @else {
+    @media (max-width: $var) {
+      @include generate-cols-copy($cols-copy, $name);
+    }
+  }
+}
+
+@mixin col-unit {
+  break-inside: avoid;
+  //display: table;  // ff - https://bugzilla.mozilla.org/show_bug.cgi?id=549114#c6
+}
+
+.col-unit {
+  @include col-unit;
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  ROWS
+//  ----------------------------------------------------------------------
+
+@mixin row {
+  margin-bottom: $gutter-y;
+}
+
+@each $name, $var in $bps {
+  @if $name == full {
+    .row {
+      @include row;
+    }
+  }
+  @else {
+    .row---#{$name} {
+      @media (max-width: $var) {
+        @include row;
+      }
+    }
+  }
+}

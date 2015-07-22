@@ -1,0 +1,69 @@
+.affix {
+  position: fixed;
+}
+
+.block {
+  margin-bottom: $block-margin;
+}
+
+.cf,
+.clearfix {
+  @include cf;
+}
+
+.context {
+  position: relative;
+}
+
+.copy {
+  line-height: $line-height;
+}
+
+@each $dir in right, left {
+  .pull---#{$dir} {
+    float: $dir;
+  }
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  VISIBILITY
+//  ----------------------------------------------------------------------
+
+.hidden {
+  @include hidden;
+}
+
+%hide {
+  display: none !important;
+}
+
+.hide {
+  @extend %hide;
+}
+
+.show {
+  display: inherit;
+}
+
+@each $name, $var in $bps {
+  .hide-show---#{$name} {
+    @extend %hide;
+
+    @media (max-width: $var) {
+      display: inherit !important;
+
+      &.inline {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  .show-hide---#{$name} {
+    @media (max-width: $var) {
+      display: none !important;
+    }
+  }
+}
