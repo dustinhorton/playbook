@@ -3,6 +3,8 @@
 }
 
 
+$container-gutter: percentage($container-gutter);
+
 .container {
   margin: auto;
   padding: 0 $container-gutter;
