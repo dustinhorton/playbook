@@ -30,7 +30,7 @@
   }
 }
 
-@mixin border-radius($side, $radius: $radius) {
+@mixin border-radius($side, $radius: $border-radius) {
   @if $side == top or $side == bottom {
     border-#{$side}-right-radius: $radius;
     border-#{$side}-left-radius: $radius;
@@ -194,6 +194,7 @@
     font-style: normal;
     font-weight: normal;
     speak: none;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

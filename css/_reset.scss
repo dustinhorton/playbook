@@ -85,12 +85,17 @@ optgroup {
 //  INLINE
 //  ----------------------------------------------------------------------
 
+a,
+abbr {
+  outline: 0;
+  text-decoration: none;
+}
+
 address,
 cite {
   font-style: normal;
 }
 
-a {
-  outline: 0;
-  text-decoration: none;
+iframe {
+  border: 0;
 }

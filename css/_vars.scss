@@ -7,12 +7,11 @@ $font-path: '/font/' !default;
 
 
 
-
 //  ----------------------------------------------------------------------
 //  SCAFFOLDING
 //  ----------------------------------------------------------------------
 
-$content: 1024px !default;
+$full: 1200px !default;
 
 
 
@@ -75,7 +74,9 @@ $ease: ease-in-out !default;
 
 $btn-align: left !default;
 
-$container-gutter: $gutter !default;
+$container-gutter---px: $gutter !default;
+$container-gutter:      percentage($container-gutter---px) !default;
+$container-max-width: false !default;
 
 $form-single-gutter: $gutter / 2 !default;
 
@@ -90,7 +91,7 @@ $modal-s: 10px !default;
 //  BREAKPOINTS
 //  ----------------------------------------------------------------------
 
-$full:       $content + $container-gutter * 2 !default;
+$full:       1200px !default;
 $gt-full:    $full + 1 !default;
 $lt-full:    $full - 1 !default;
 $desktop:    980px !default;

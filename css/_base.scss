@@ -11,8 +11,7 @@ select {
 }
 
 body,
-button,
-select {
+button {
   line-height: 1;
 }
 
@@ -71,6 +70,7 @@ input,
 textarea,
 select {
   width: 100%;
+  line-height: normal;
 }
 
 input,

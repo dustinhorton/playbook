@@ -6,6 +6,10 @@
 .container {
   margin: auto;
   padding: 0 $container-gutter;
+
+  @if $container-max-width == true {
+    max-width: $full;
+  }
 }
 
 
