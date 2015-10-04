@@ -1,5 +1,5 @@
 .btn---full {
-  @include btn-full;
+  @include btn---full;
 }
 
 
@@ -9,12 +9,12 @@ $container-gutter: percentage($container-gutter---px);
   margin: auto;
   padding: 0 $container-gutter;
 
-  @if $container-max-width == true {
+  @if $container-max-w == true {
     max-width: $full;
   }
 }
 
-@if $container-max-width == true {
+@if $container-max-w == true {
   .container---full {
     max-width: none;
   }
@@ -37,35 +37,35 @@ $container-gutter: percentage($container-gutter---px);
 }
 
 
-.form-single {
+.form---single {
   width: 100%;
   display: table;
 }
 
-.form-single--input {
+.form---single--input {
   width: 100%;
   display: table-cell;
 }
 
-.form-single--action {
+.form---single--action {
   width: 1%;
   display: table-cell;
-  padding: 0 0 0 $form-single-gutter;
+  padding: 0 0 0 $form---single-gutter;
 }
 
-.form-single--action--btn {
+.form---single--action--btn {
   white-space: nowrap;
 }
 
 
 .img---full {
-  @include img-full;
+  @include img---full;
 }
 
 
-.list---alpha    { @include list-alpha; }
-.list---bulleted { @include list-bulleted; }
-.list---numbered { @include list-numbered; }
+.list---alpha    { @include list---alpha; }
+.list---bulleted { @include list---bulleted; }
+.list---numbered { @include list---numbered; }
 
 .list---blocks {
   > li,

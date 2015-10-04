@@ -7,6 +7,7 @@ $font-path: '/font/' !default;
 
 
 
+
 //  ----------------------------------------------------------------------
 //  SCAFFOLDING
 //  ----------------------------------------------------------------------
@@ -76,9 +77,9 @@ $btn-align: left !default;
 
 $container-gutter---px: $gutter                !default;
 $container-gutter:      $container-gutter---px !default;
-$container-max-width: false !default;
+$container-max-w: false !default;
 
-$form-single-gutter: $gutter / 2 !default;
+$form---single-gutter: $gutter / 2 !default;
 
 $list-p: 1.35em !default;
 

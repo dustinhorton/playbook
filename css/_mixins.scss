@@ -279,7 +279,7 @@
 //  COMPONENTS
 //  ----------------------------------------------------------------------
 
-@mixin btn-full {
+@mixin btn---full {
   width: 100%;
   display: block;
   text-align: $btn-align;
@@ -289,22 +289,22 @@
   max-width: $w + $container-gutter---px * 2;
 }
 
-@mixin img-full {
+@mixin img---full {
   width: 100%;
   max-width: none;
 }
 
-@mixin list-alpha {
+@mixin list---alpha {
   list-style: lower-alpha;
   padding-left: $list-p;
 }
 
-@mixin list-bulleted {
+@mixin list---bulleted {
   list-style: disc;
   padding-left: $list-p;
 }
 
-@mixin list-numbered {
+@mixin list---numbered {
   list-style: decimal;
   padding-left: $list-p;
 }
