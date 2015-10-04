@@ -14,6 +14,12 @@ $container-gutter: percentage($container-gutter---px);
   }
 }
 
+@if $container-max-width == true {
+  .container---full {
+    max-width: none;
+  }
+}
+
 
 .embed {
   width: 100%;
