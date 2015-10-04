@@ -74,7 +74,8 @@ $ease: ease-in-out !default;
 
 $btn-align: left !default;
 
-$container-gutter: $gutter !default;
+$container-gutter---px: $gutter                !default;
+$container-gutter:      $container-gutter---px !default;
 $container-max-width: false !default;
 
 $form-single-gutter: $gutter / 2 !default;

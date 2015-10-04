@@ -3,7 +3,7 @@
 }
 
 
-$container-gutter: percentage($container-gutter);
+$container-gutter: percentage($container-gutter---px);
 
 .container {
   margin: auto;

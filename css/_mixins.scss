@@ -285,6 +285,10 @@
   text-align: $btn-align;
 }
 
+@mixin container-max-w($w) {
+  max-width: $w + $container-gutter---px * 2;
+}
+
 @mixin img-full {
   width: 100%;
   max-width: none;
