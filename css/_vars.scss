@@ -28,7 +28,8 @@ $cols:      3     !default;
 $cols-solo: $cols !default;
 $cols-copy: $cols !default;
 
-$row-margin: $gutter-y !default;
+$row-margin:         $gutter-y !default;
+$row-margin---loose: $row-margin * 2 !default;
 
 $block-margin: 20px !default;
 

@@ -209,6 +209,10 @@
   margin-bottom: $row-margin;
 }
 
+.row---loose {
+  margin-bottom: $row-margin---loose;
+}
+
 @each $name, $var in $bps {
   @if $name == full {
     .row {
