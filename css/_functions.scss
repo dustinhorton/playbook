@@ -17,7 +17,7 @@
   }
 }
 
-@function percentage($target, $context: $full) {
+@function percent($target, $context: $full) {
   @return $target / $context * 100%;
 }
 

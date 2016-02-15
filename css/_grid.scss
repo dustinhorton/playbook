@@ -38,12 +38,12 @@
         @if $x != $i {
           @if $bp == full {
             .col---#{$x}-#{$i} {
-              width: percentage($x, $i);
+              width: percent($x, $i);
             }
           }
           @else {
             .col---#{$bp}-#{$x}-#{$i} {
-              width: percentage($x, $i);
+              width: percent($x, $i);
             }
           }
         }
@@ -65,8 +65,8 @@
 
 
 .cols {
-  @include cf;
   @include cols($gutter);
+  @include cf;
 
   > [class*="col---"] {
     @include col($gutter);
@@ -87,7 +87,7 @@
     @media (max-width: $var) {
       @include generate-all-cols($cols, $name);
 
-      .cols-reset---#{$name} {
+      .cols---reset---#{$name} {
         @include reset-cols;
       }
     }
@@ -98,14 +98,49 @@
 
 
 //  ----------------------------------------------------------------------
+//  COLUMNS - CENTERED
+//  ----------------------------------------------------------------------
+
+.cols---centered {
+  font-size: 0;
+  text-align: center;
+
+  > [class*="column-"] {
+    display: inline-block;
+    float: none;
+    font-size: $font-size;
+    text-align: left;
+    vertical-align: top;
+  }
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  COLUMN - CENTERED
+//  ----------------------------------------------------------------------
+
+.col---centered {
+  float: none !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
+//  ----------------------------------------------------------------------
 //  COLUMN - SOLO
 //  ----------------------------------------------------------------------
 
-@mixin generate-cols-solo($cols: $cols-solo) {
-  @for $i from 1 through $cols {
+.col---solo {
+  width: auto;
+
+  @for $i from 1 through $cols-solo {
     @for $x from 1 through $i {
       @if $i != 1 and $x != $i {
-        .col---#{$x}-#{$i}.col---solo {
+        &.col---#{$x}-#{$i} {
           max-width: $full / $i * $x;
         }
       }
@@ -114,17 +149,10 @@
 }
 
 
-.col---solo {
-  width: auto;
-}
-
-@include generate-cols-solo;
-
-
 
 
 //  ----------------------------------------------------------------------
-//  COPY COLUMNS
+//  COLUMNS - COPY
 //  ----------------------------------------------------------------------
 
 @mixin cols-copy($cols, $gutter: $gutter) {
@@ -160,7 +188,10 @@
 
 @mixin col-unit {
   break-inside: avoid;
-  //display: table;  // ff - https://bugzilla.mozilla.org/show_bug.cgi?id=549114#c6
+
+  //@include vendor(ff) {
+  //  display: table;  // https://bugzilla.mozilla.org/show_bug.cgi?id=549114#c6
+  //}
 }
 
 .col-unit {
@@ -175,7 +206,7 @@
 //  ----------------------------------------------------------------------
 
 @mixin row {
-  margin-bottom: $gutter-y;
+  margin-bottom: $row-margin;
 }
 
 @each $name, $var in $bps {

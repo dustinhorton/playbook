@@ -83,6 +83,13 @@
   border-radius: 50%;
 }
 
+$container-gutter: percent($container-gutter---px);
+
+@mixin container-p {
+  padding-right: $container-gutter;
+  padding-left:  $container-gutter;
+}
+
 @mixin hidden {
   width: 1px !important;
   height: 1px !important;
@@ -254,6 +261,11 @@
 @mixin reset-margins {
   &:first-child { margin-top:    0; }
   &:last-child  { margin-bottom: 0; }
+}
+
+@mixin reset-paddings {
+  &:first-child { padding-left:  0; }
+  &:last-child  { padding-right: 0; }
 }
 
 @mixin reset-type {

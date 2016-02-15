@@ -25,6 +25,7 @@ html {
 }
 
 body {
+  background: $body-bg;
   color: $color;
 
   .lt-ie9 & {

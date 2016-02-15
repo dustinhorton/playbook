@@ -3,11 +3,9 @@
 }
 
 
-$container-gutter: percentage($container-gutter---px);
-
 .container {
+  @include container-p;
   margin: auto;
-  padding: 0 $container-gutter;
 
   @if $container-max-w == true {
     max-width: $full;

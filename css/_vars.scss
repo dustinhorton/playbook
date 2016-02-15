@@ -21,14 +21,14 @@ $full: 1200px !default;
 //  GRID
 //  ----------------------------------------------------------------------
 
+$gutter:   20px !default;
+$gutter-y: 50px !default;
+
 $cols:      3     !default;
 $cols-solo: $cols !default;
 $cols-copy: $cols !default;
 
-
-//  SPACING
-$gutter:   20px !default;
-$gutter-y: 50px !default;
+$row-margin: $gutter-y !default;
 
 $block-margin: 20px !default;
 
@@ -72,6 +72,8 @@ $ease: ease-in-out !default;
 //  ----------------------------------------------------------------------
 //  COMPONENTS
 //  ----------------------------------------------------------------------
+
+$body-bg: #fff !default;
 
 $btn-align: left !default;
 
@@ -119,6 +121,7 @@ $bps:
 
 $socials:
   fb        $fb,
-  twitter   $twitter,
-  pinterest $pinterest
+  google    $google,
+  pinterest $pinterest,
+  twitter   $twitter
   !default;
