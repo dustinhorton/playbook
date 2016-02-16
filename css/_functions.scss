@@ -17,16 +17,27 @@
   }
 }
 
+@function strip-unit($val) {
+  @return $val / ($val * 0 + 1);
+}
+
+
+
+
+//  ----------------------------------------------------------------------
+//  UNITS
+//  ----------------------------------------------------------------------
+
+@function em($px, $font-size: $font-size) {
+  @return $px / $font-size * 1em;
+}
+
 @function percent($target, $context: $full) {
   @return $target / $context * 100%;
 }
 
 @function rem($px) {
-  @return strip-unit($px) / strip-unit($font-size) * 1rem;
-}
-
-@function strip-unit($val) {
-  @return $val / ($val * 0 + 1);
+  @return $px / $font-size * 1rem;
 }
 
 
