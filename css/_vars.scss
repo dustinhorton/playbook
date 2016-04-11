@@ -100,8 +100,8 @@ $lt-full:    $full - 1 !default;
 $desktop:    980px !default;
 $tablet:     768px !default;
 $mobile:     568px !default;
-$mobile-med: 480px !default;
-$mobile-sm:  320px !default;
+$mobile---m: 480px !default;
+$mobile---s: 320px !default;
 
 $bps:
   full       $full,
@@ -109,8 +109,8 @@ $bps:
   desktop    $desktop,
   tablet     $tablet,
   mobile     $mobile,
-  mobile-med $mobile-med,
-  mobile-sm  $mobile-sm
+  mobile---m $mobile---m,
+  mobile---s $mobile---s
   !default;
 
 
