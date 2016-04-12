@@ -51,7 +51,7 @@
   @return ($num / 1000) * 1em;
 }
 
-@function line-height($px) {
+@function line-height($px, $font-size: $font-size) {
   @return $px / $font-size;
 }
 
