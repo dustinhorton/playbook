@@ -101,6 +101,17 @@ $container-gutter: percent($container-gutter---px);
   position: absolute;
 }
 
+@mixin padding($dir: 'x', $px: 0) {
+  @if $dir == x {
+    padding-right: $px;
+    padding-left: $px;
+  }
+  @else if $dir == y {
+    padding-top: $px;
+    padding-bottom: $px;
+  }
+}
+
 @mixin pointer-base($size: $pointer-size) {
   &:after {
     content: '';

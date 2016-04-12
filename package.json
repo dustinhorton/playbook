@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "CSS strategy",
   "author": "Dustin Horton <d@dustinhorton.com> (http://dustinhorton.com)",
-  "main" : "css/playbool.scss",
+  "main" : "css/playbook.scss",
   "repository": {
     "type": "git",
     "url": "https://github.com/dustinhorton/playbook.git"
