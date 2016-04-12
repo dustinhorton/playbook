@@ -283,6 +283,8 @@ $container-gutter: percent($container-gutter---px);
   color: $color;
   font-family: $fonts;
   font-size: $font-size;
+  font-weight: normal;
+  letter-spacing: 0;
   line-height: $line-height;
   text-transform: none;
 }
@@ -290,7 +292,6 @@ $container-gutter: percent($container-gutter---px);
 @mixin reset-type-heading {
   @include reset-type;
   font-weight: $h-font-weight;
-  letter-spacing: 0;
   line-height: 1;
   margin: 0;
 }
