@@ -220,7 +220,9 @@ $container-gutter: percent($container-gutter---px);
 
 @mixin font-size($size) {
   font-size: $size;
-  font-size: rem($size);
+  @if $size != 'inherit' and $size > $font-size---rem-min {
+    font-size: rem($size);
+  }
 }
 
 @mixin letter-spacing($num) {
@@ -243,6 +245,21 @@ $container-gutter: percent($container-gutter---px);
   text-overflow: ellipsis;
   white-space: nowrap;
   word-wrap: normal;
+}
+
+@mixin type($font-size, $letter-spacing: 0, $line-height: inherit) {
+  @include font-size($font-size);
+  @if $letter-spacing != 0 {
+    @if unit($letter-spacing) == 'px' {
+      letter-spacing: em($letter-spacing, $font-size);
+    }
+    @else {
+      letter-spacing: $letter-spacing;
+    }
+  }
+  @if $line-height != 'inherit' {
+    line-height: line-height($line-height, $font-size);
+  }
 }
 
 @mixin hide-text {
