@@ -205,17 +205,17 @@ $container-gutter: percent($container-gutter---px);
 //  TYPOGRAPHY
 //  ----------------------------------------------------------------------
 
-@if $font-icon != '' {
-  @mixin font-icon {
-    font-family: $font-icon;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-}
+//@if $font-icon != '' {
+//  @mixin font-icon {
+//    font-family: $font-icon;
+//    font-style: normal;
+//    font-weight: normal;
+//    speak: none;
+//    text-rendering: auto;
+//    -webkit-font-smoothing: antialiased;
+//    -moz-osx-font-smoothing: grayscale;
+//  }
+//}
 
 @mixin font-size($size) {
   font-size: $size;
