@@ -13,21 +13,20 @@
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$filter-orientation}, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($end)}');
 }
 
+@mixin bg-img($img, $color: transparent) {
+  width: width($img);
+  height: height($img);
+  background: img-url($img) center $color;
+  display: inline-block;
+}
+
 @mixin bg-svg($img, $w, $h) {
   background: img-url($img + '.svg');
   background-size: $w $h;
-
-  .no-svg & {
-    background-image: img-url($img + '.png');
-  }
 }
 
-@mixin border-image($img, $border-w-x, $border-w-y: $border-w-x, $border-color: #000) {
+@mixin border-image($img, $border-w-x, $border-w-y: $border-w-x) {
   border-image: img-url($img) strip-unit($border-w-x) strip-unit($border-w-y) repeat;
-
-  .no-borderimage & {
-    border: 1px $border-color solid;
-  }
 }
 
 @mixin border-radius($side, $radius: $border-radius) {
@@ -326,7 +325,7 @@ $container-gutter: percent($container-gutter---px);
   text-align: $btn-align;
 }
 
-@mixin container-max-w($w) {
+@mixin container-w($w) {
   max-width: $w + $container-gutter---px * 2;
 }
 

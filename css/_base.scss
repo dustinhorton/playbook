@@ -27,11 +27,6 @@ html {
 body {
   background: $body-bg;
   color: $color;
-
-  .lt-ie9 & {
-    width: $full;
-    margin: auto;
-  }
 }
 
 p,
@@ -112,6 +107,7 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  user-select: none;
   vertical-align: middle;
 }
 
