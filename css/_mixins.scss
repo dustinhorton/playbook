@@ -20,7 +20,7 @@
   display: inline-block;
 }
 
-@mixin bg-svg($img, $w, $h) {
+@mixin bg-svg($img) {
   width: width($img);
   height: height($img);
   background: img-url($img) center no-repeat;
