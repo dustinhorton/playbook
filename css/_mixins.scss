@@ -21,8 +21,10 @@
 }
 
 @mixin bg-svg($img, $w, $h) {
-  background: img-url($img + '.svg');
-  background-size: $w $h;
+  width: width($img);
+  height: height($img);
+  background: img-url($img) center no-repeat;
+  @include hide-text;
 }
 
 @mixin border-image($img, $border-w-x, $border-w-y: $border-w-x) {
