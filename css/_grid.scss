@@ -157,6 +157,7 @@
 
 @mixin cols-copy($cols, $gutter: $gutter) {
   column-count: $cols;
+  column-fill: balance-all;
   column-gap: $gutter;
 }
 
