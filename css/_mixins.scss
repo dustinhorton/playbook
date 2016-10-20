@@ -102,6 +102,10 @@ $container-gutter: percent($container-gutter---px);
   position: absolute;
 }
 
+@mixin item-width($width: 25%, $gutter: $gutter) {
+  width: calc(#{$width} - #{$gutter});
+}
+
 @mixin padding($dir: 'x', $px: 0) {
   @if $dir == x {
     padding-right: $px;
@@ -287,14 +291,24 @@ $container-gutter: percent($container-gutter---px);
   @include reset-type;
 }
 
-@mixin reset-margins {
-  &:first-child { margin-top:    0; }
-  &:last-child  { margin-bottom: 0; }
+@mixin reset-margin($axis: y) {
+  @if $axis = y {
+    &:first-child { margin-top:    0; }
+    &:last-child  { margin-bottom: 0; }
+  } @else {
+    &:first-child { margin-left:  0; }
+    &:last-child  { margin-right: 0; }
+  }
 }
 
-@mixin reset-paddings {
-  &:first-child { padding-left:  0; }
-  &:last-child  { padding-right: 0; }
+@mixin reset-padding($axis: y) {
+  @if $axis = y {
+    &:first-child { padding-top:    0; }
+    &:last-child  { padding-bottom: 0; }
+  } @else {
+    &:first-child { padding-left:  0; }
+    &:last-child  { padding-right: 0; }
+  }
 }
 
 @mixin reset-type {
