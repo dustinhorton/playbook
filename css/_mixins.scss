@@ -345,6 +345,12 @@ $container-gutter: percent($container-gutter---px);
   max-width: $w + $container-gutter---px * 2;
 }
 
+@mixin container-p {
+  $gutter: $container-gutter---px;
+  padding-right: $gutter;
+  padding-left:  $gutter;
+}
+
 @mixin img---full {
   width: 100%;
   max-width: none;
