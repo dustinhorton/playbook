@@ -84,13 +84,6 @@
   border-radius: 50%;
 }
 
-$container-gutter: percent($container-gutter---px);
-
-@mixin container-p {
-  padding-right: $container-gutter;
-  padding-left:  $container-gutter;
-}
-
 @mixin hidden {
   width: 1px !important;
   height: 1px !important;
@@ -345,10 +338,11 @@ $container-gutter: percent($container-gutter---px);
   max-width: $w + $container-gutter---px * 2;
 }
 
+$container-gutter: percent($container-gutter---px);
+
 @mixin container-p {
-  $gutter: $container-gutter---px;
-  padding-right: $gutter;
-  padding-left:  $gutter;
+  padding-right: $container-gutter;
+  padding-left:  $container-gutter;
 }
 
 @mixin img---full {
