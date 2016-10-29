@@ -6,6 +6,18 @@
   }
 }
 
+a,
+area,
+button,
+label,
+input,
+select,
+textarea,
+[tabindex] {
+  touch-action: manipulation;  // ie 10
+}
+
+
 
 //  ----------------------------------------------------------------------
 //  BLOCK
