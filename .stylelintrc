@@ -21,15 +21,15 @@
     "max-empty-lines": 4,
     "selector-list-comma-newline-after": "always-multi-line",
     "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": [
-        "window-inactive"
-      ]
+      "ignorePseudoClasses": ["window-inactive"]
     }],
 
     "scss/at-import-no-partial-leading-underscore": true,
+    "scss/at-import-partial-extension-blacklist": ["scss"],
     "scss/at-mixin-no-argumentless-call-parentheses": true,
     "scss/dollar-variable-colon-newline-after": "always-multi-line",
     "scss/dollar-variable-colon-space-before": "never",
+    "scss/dollar-variable-no-missing-interpolation": true,
     "scss/operator-no-newline-after": true,
     "scss/operator-no-newline-before": true,
     "scss/operator-no-unspaced": true,
