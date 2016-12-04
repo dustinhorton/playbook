@@ -9,10 +9,15 @@ $prefixes: webkit, moz, ms, o;
 //  COLORS
 //  ----------------------------------------------------------------------
 
+// stylelint-disable color-no-hex
+$black: #000;
+$white: #fff;
+
 $fb:        #3b5998;
 $google:    #d50f25;
 $pinterest: #bd081c;
 $twitter:   #55acee;
+// stylelint-enable color-no-hex
 
 
 

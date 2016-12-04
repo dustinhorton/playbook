@@ -6,7 +6,7 @@
 [disabled] {
   &,
   * {
-    cursor: default !important;
+    cursor: default !important;  // stylelint-disable declaration-no-important
     pointer-events: none;
   }
 }

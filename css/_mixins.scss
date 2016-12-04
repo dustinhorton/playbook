@@ -10,7 +10,7 @@
   $filter-orientation: if($orientation == vertical, 0, 1);
   background: mix($start, $end);
   background: linear-gradient($orientation, $start, $end);
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$filter-orientation}, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($end)}');
+  filter: progid:dximagetransform.microsoft.gradient(gradientType=#{$filter-orientation}, startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($end)}');
 }
 
 @mixin bg-img($img, $color: transparent) {
@@ -68,13 +68,13 @@
 }
 
 @mixin cf {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: ' ';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
@@ -111,7 +111,7 @@
 }
 
 @mixin pointer-base($size: $pointer-size) {
-  &:after {
+  &::after {
     content: '';
     border: $size transparent solid;
     position: absolute;
@@ -132,7 +132,7 @@
 @mixin pointer($side: top, $size: 10px, $color: transparent, $alignment: center, $offset: $size * 1.5) {
   position: relative;
 
-  &:after {
+  &::after {
     content: '';
     border: $size transparent solid;
     position: absolute;
@@ -142,7 +142,7 @@
 
       @if $alignment == left {
         margin-left: 0;
-        left: $offset
+        left: $offset;
       }
       @else if $alignment == right {
         margin-left: 0;
@@ -155,7 +155,7 @@
 
       @if $alignment == top {
         margin-top: 0;
-        top: $offset
+        top: $offset;
       }
       @else if $alignment == bottom {
         margin-top: 0;
@@ -288,7 +288,8 @@
   @if $axis = y {
     &:first-child { margin-top:    0; }
     &:last-child  { margin-bottom: 0; }
-  } @else {
+  }
+  @else {
     &:first-child { margin-left:  0; }
     &:last-child  { margin-right: 0; }
   }
@@ -298,7 +299,8 @@
   @if $axis = y {
     &:first-child { padding-top:    0; }
     &:last-child  { padding-bottom: 0; }
-  } @else {
+  }
+  @else {
     &:first-child { padding-left:  0; }
     &:last-child  { padding-right: 0; }
   }

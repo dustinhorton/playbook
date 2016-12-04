@@ -1,7 +1,10 @@
+// stylelint-disable selector-list-comma-newline-after
+
+
 * {
   &,
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     box-sizing: border-box;
   }
 }
@@ -154,7 +157,7 @@ sub {
   bottom: -0.25em;
 }
 
-svg:not(:root) {
+svg:not(:root) {  // stylelint-disable selector-root-no-composition
   overflow: hidden;  // ie 9-11
 }
 

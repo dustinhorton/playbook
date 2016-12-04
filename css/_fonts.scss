@@ -3,9 +3,10 @@
     @font-face {
       font-family: $font;
       font-weight: normal;
-      src: font-url('#{$font}/#{$font}.eot?') format('embedded-opentype'),
-           font-url('#{$font}/#{$font}.woff') format('woff'),
-           font-url('#{$font}/#{$font}.ttf')  format('truetype');
+      src:
+        font-url('#{$font}/#{$font}.eot?') format('embedded-opentype'),
+        font-url('#{$font}/#{$font}.woff') format('woff'),
+        font-url('#{$font}/#{$font}.ttf')  format('truetype');
     }
   }
 }

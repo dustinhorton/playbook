@@ -17,8 +17,8 @@ blockquote,
 q {
   quotes: none;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     content: none;
   }
@@ -31,7 +31,7 @@ ul {
 
 pre,
 code {
-  font-family: monospace, monospace;
+  font-family: monospace, monospace;  // stylelint-disable font-family-no-duplicate-names
 }
 
 hr {

@@ -1,3 +1,6 @@
+// stylelint-disable declaration-bang-space-before
+
+
 //  ----------------------------------------------------------------------
 //  PATHS
 //  ----------------------------------------------------------------------
@@ -42,7 +45,7 @@ $block-margin: 20px !default;
 
 $webfonts: () !default;
 
-$color: #000 !default;
+$color: $black !default;
 
 $fonts:     helvetica neue, helvetica, arial, sans-serif !default;
 $font-icon: '' !default;
@@ -75,7 +78,7 @@ $ease: ease-in-out !default;
 //  COMPONENTS
 //  ----------------------------------------------------------------------
 
-$body-bg: #fff !default;
+$body-bg: $white !default;
 
 $btn-align: left !default;
 
