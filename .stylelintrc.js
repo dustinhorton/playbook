@@ -260,7 +260,6 @@ module.exports = {
     'selector-no-empty': true,
     'selector-no-id': true,
     'selector-no-vendor-prefix': true,
-    'selector-pseudo-element-case': 'lower',
     'selector-root-no-composition': true,
     'unit-blacklist': [
       'ch',
