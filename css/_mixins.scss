@@ -95,8 +95,8 @@
   position: absolute;
 }
 
-@mixin item-width($width: 25%, $gutter: $gutter) {
-  width: calc(#{$width} - #{$gutter});
+@mixin item-width($w: 25%, $gutter: $gutter) {
+  width: calc(#{$w} - #{$gutter});
 }
 
 @mixin padding($dir: 'x', $px: 0) {
@@ -188,9 +188,9 @@
   -webkit-overflow-scrolling: touch;
 }
 
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
 }
 
 @mixin transition($args...) {
