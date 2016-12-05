@@ -1,7 +1,7 @@
 module.exports = {
   'extends': 'stylelint-config-standard',
   'plugins': [
-    'stylelint-scss'
+    'stylelint-scss',
   ],
   'rules': {
     'block-no-empty': null,
@@ -11,25 +11,32 @@ module.exports = {
 
 
     // disable stylelint-config-standard
-    'at-rule-empty-line-before': null,
-    'comment-empty-line-before': null,
     'declaration-colon-space-after': null,
-    'declaration-empty-line-before': null,
     'no-missing-end-of-source-newline': null,
 
     // override stylelint-config-standard
+    'at-rule-empty-line-before': ['always', {
+      'except': [
+        'blockless-group',
+        'first-nested',
+      ],
+      'ignoreAtRules': ['else', 'if'],
+    }],
     'at-rule-name-space-after': 'always',
     'block-opening-brace-space-before': 'always-multi-line',
     'custom-property-empty-line-before': 'never',
+    'declaration-empty-line-before': 'never',
     'max-empty-lines': 4,
     'selector-list-comma-newline-after': 'always-multi-line',
     'selector-pseudo-class-no-unknown': [true, {
       'ignorePseudoClasses': ['window-inactive']
     }],
 
+    // stylelint-scss
     'scss/at-import-no-partial-leading-underscore': true,
     'scss/at-import-partial-extension-blacklist': ['scss'],
     'scss/at-mixin-no-argumentless-call-parentheses': true,
+    //'scss/declaration-nested-properties': 'never',  // wait for 1.3.5
     'scss/dollar-variable-colon-newline-after': 'always-multi-line',
     'scss/dollar-variable-colon-space-before': 'never',
     'scss/dollar-variable-no-missing-interpolation': true,
@@ -50,10 +57,11 @@ module.exports = {
         'if',
         'include',
         'mixin',
-        'return'
-      ]
+        'return',
+      ],
     }],
     'at-rule-no-vendor-prefix': true,
+    'color-named': 'never',
     'color-no-hex': true,
     'declaration-block-no-ignored-properties': true,
     'declaration-block-properties-order': [
@@ -222,12 +230,11 @@ module.exports = {
       'transition',
       'transition-property',
       'transition-delay',
-      'transition-duration'
+      'transition-duration',
     ],
     'declaration-block-semicolon-newline-before': 'never-multi-line',
-    'declaration-no-important': true,
     'declaration-property-unit-blacklist': {
-      'font-size': ['em']
+      'font-size': ['em'],
     },
     'declaration-property-unit-whitelist': {
       'border': ['px'],
@@ -235,16 +242,16 @@ module.exports = {
       'border-top-width': ['px'],
       'border-right-width': ['px'],
       'border-bottom-width': ['px'],
-      'border-left-width': ['px']
+      'border-left-width': ['px'],
     },
     'declaration-property-value-blacklist': {
-      'flex': ['1']
+      'flex': ['1'],
     },
     'font-family-name-quotes': 'always-where-required',
     'font-weight-notation': 'named-where-possible',
     'function-url-no-scheme-relative': true,
     'function-url-quotes': ['always', {
-      'except': ['empty']
+      'except': ['empty'],
     }],
     'media-feature-no-missing-punctuation': true,
     'no-descending-specificity': true,
@@ -255,11 +262,13 @@ module.exports = {
     'property-no-vendor-prefix': true,
     'root-no-standard-properties': true,
     'selector-attribute-quotes': 'always',
+    'selector-list-comma-newline-after': 'always',
     'selector-list-comma-newline-before': 'never-multi-line',
     'selector-list-comma-space-after': 'always-single-line',
     'selector-no-empty': true,
     'selector-no-id': true,
     'selector-no-vendor-prefix': true,
+    'selector-pseudo-element-case': 'lower',
     'selector-root-no-composition': true,
     'unit-blacklist': [
       'ch',
@@ -269,9 +278,9 @@ module.exports = {
       'mm',
       'pc',
       'pt',
-      'q'
+      'q',
     ],
     'value-keyword-case': 'lower',
-    'value-no-vendor-prefix': true
-  }
+    'value-no-vendor-prefix': true,
+  },
 }

@@ -21,10 +21,10 @@
 }
 
 @mixin bg-svg($img) {
+  @include hide-text;
   width: width($img);
   height: height($img);
   background: img-url($img) center no-repeat;
-  @include hide-text;
 }
 
 @mixin border-image($img, $border-w-x, $border-w-y: $border-w-x) {
@@ -274,6 +274,7 @@
 //  ----------------------------------------------------------------------
 
 @mixin reset {
+  @include reset-type;
   width: auto;
   background: none;
   border: 0;
@@ -281,7 +282,6 @@
   margin: 0;
   padding: 0;
   position: static;
-  @include reset-type;
 }
 
 @mixin reset-margin($axis: y) {
