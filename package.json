@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "stylelint": "^7.6.0",
-    "stylelint-config-standard": "^15.0.0",
-    "stylelint-scss": "^1.3.4"
+    "stylelint-config": "dustinhorton/stylelint-config#43f3006d6de17e5118f2320541860baafa8cae00"
   }
 }
