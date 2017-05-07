@@ -45,11 +45,9 @@
 @mixin center($axis: both) {
   @if $axis == x {
     @include center-x;
-  }
-  @else if $axis == y {
+  } @else if $axis == y {
     @include center-y;
-  }
-  @else {
+  } @else {
     @include center-x;
     @include center-y;
   }
@@ -82,6 +80,14 @@
 @mixin circle($size) {
   @include size($size);
   border-radius: 50%;
+}
+
+@mixin color-variants($property, $colors) {
+  @each $name, $var in $colors {
+    &---#{$name} {
+      #{$property}: $var;
+    }
+  }
 }
 
 @mixin hidden {
@@ -250,8 +256,7 @@
   @if $letter-spacing != 0 {
     @if unit($letter-spacing) == 'px' {
       letter-spacing: em($letter-spacing, $font-size);
-    }
-    @else {
+    } @else {
       letter-spacing: $letter-spacing;
     }
   }
@@ -288,8 +293,7 @@
   @if $axis = y {
     &:first-child { margin-top:    0; }
     &:last-child  { margin-bottom: 0; }
-  }
-  @else {
+  } @else {
     &:first-child { margin-left:  0; }
     &:last-child  { margin-right: 0; }
   }
@@ -299,8 +303,7 @@
   @if $axis = y {
     &:first-child { padding-top:    0; }
     &:last-child  { padding-bottom: 0; }
-  }
-  @else {
+  } @else {
     &:first-child { padding-left:  0; }
     &:last-child  { padding-right: 0; }
   }

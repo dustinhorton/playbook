@@ -26,8 +26,7 @@
       .col---#{$i} {
         width: 100%;
       }
-    }
-    @else {
+    } @else {
       @if $i == 2 and $bp != full {
         .col---#{$bp}-1 {
           width: 100%;
@@ -40,8 +39,7 @@
             .col---#{$x}-#{$i} {
               width: percent($x, $i);
             }
-          }
-          @else {
+          } @else {
             .col---#{$bp}-#{$x}-#{$i} {
               width: percent($x, $i);
             }
@@ -82,8 +80,7 @@
 @each $name, $var in $bps {
   @if $name == full {
     @include generate-all-cols($cols, $name);
-  }
-  @else {
+  } @else {
     @media (max-width: $var) {
       @include generate-all-cols($cols, $name);
 
@@ -167,8 +164,7 @@
       .cols---#{$i} {
         @include cols-copy($i);
       }
-    }
-    @else {
+    } @else {
       .cols---#{$bp}-#{$i} {
         column-count: $i;
       }
@@ -179,8 +175,7 @@
 @each $name, $var in $bps {
   @if $name == full {
     @include generate-cols-copy($cols-copy, $name);
-  }
-  @else {
+  } @else {
     @media (max-width: $var) {
       @include generate-cols-copy($cols-copy, $name);
     }
@@ -219,8 +214,7 @@
     .row {
       @include row;
     }
-  }
-  @else {
+  } @else {
     .row---#{$name} {
       @media (max-width: $var) {
         @include row;
