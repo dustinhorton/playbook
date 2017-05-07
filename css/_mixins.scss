@@ -222,6 +222,13 @@
 //  }
 //}
 
+
+@mixin caps($font-size: inherit, $letter-spacing: 0.1em, $line-height: inherit) {
+  @include type($font-size, $letter-spacing, $line-height);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
 @mixin font-size($size) {
   font-size: $size;
   @if $size != 'inherit' and $size > $font-size---rem-min {
