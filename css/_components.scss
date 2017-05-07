@@ -91,6 +91,12 @@
 
 
 .text {
+  @each $style in italic, normal {
+    &---#{$style} {
+      font-style: $style;
+    }
+  }
+
   @each $alignment in left, center, right {
     &---#{$alignment} {
       text-align: $alignment;
