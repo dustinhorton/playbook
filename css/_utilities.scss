@@ -19,6 +19,10 @@
   line-height: $line-height;
 }
 
+.flush {
+  margin-bottom: 0;
+}
+
 @each $dir in right, left {
   .pull---#{$dir} {
     float: $dir;
