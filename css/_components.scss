@@ -24,6 +24,10 @@
   height: 0;
   padding: 0 0 aspect-ratio(1080, 720);
   position: relative;
+
+  &---vid {
+    padding-bottom: aspect-ratio(16, 9);
+  }
 }
 
 .embed--src {
