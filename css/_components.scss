@@ -4,11 +4,16 @@
 
 
 .container {
-  @include container-p;
+  width: 100%;  // needed when child of flex item
   margin: auto;
+  padding: 0 $container-gutter---px;
 
   @if $container-max-w == true {
     max-width: $full;
+  }
+
+  @media (max-width: $lt-full) {
+    @include container-p;
   }
 }
 
